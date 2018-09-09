@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.neo4j:neo4j-auth-plugin-api:3.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-auth-plugin-api/3.1.2/f0702d650c84bba32729035b48782110c5a2637f/neo4j-auth-plugin-api-3.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-auth-plugin-api/3.1.2/ebf8ea0d471c46abbb54df00af3b922cb348a2d1/neo4j-auth-plugin-api-3.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

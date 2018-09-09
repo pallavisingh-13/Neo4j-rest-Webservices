@@ -1,0 +1,37 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    }
+}
+group 'Neo4j-rest-Webservices'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-web'],
+            [group: 'org.projectlombok', name: 'lombok', version: '1.16.10'],
+            [group: 'org.neo4j', name: 'neo4j-enterprise', version: '3.1.2'],
+            [group: 'org.neo4j', name: 'neo4j-bolt', version: '3.1.2'],
+            [group: 'org.neo4j', name: 'neo4j-metrics', version: '3.1.2']
+    )
+    testCompile(
+            [group: 'org.springframework.boot', name: 'spring-boot-starter-test'],
+            [group: 'org.mockito', name: 'mockito-core', version: '1.9.5'],
+            [group: 'org.neo4j', name: 'neo4j-kernel', version: '3.1.2', classifier: 'tests'],
+            [group: 'org.neo4j', name: 'neo4j-enterprise-kernel', version: '3.1.2', classifier: 'tests'],
+            [group: 'org.neo4j', name: 'neo4j-io', version: '3.1.2', classifier: 'tests'],
+            [group: 'junit', name: 'junit']
+    )
+}

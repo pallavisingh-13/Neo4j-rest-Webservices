@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Neo4j-rest-Webservices.iml" filepath="$PROJECT_DIR$/Neo4j-rest-Webservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Neo4j-rest-Webservices_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Neo4j-rest-Webservices_main.iml" group="Neo4j-rest-Webservices" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Neo4j-rest-Webservices_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Neo4j-rest-Webservices_test.iml" group="Neo4j-rest-Webservices" />
+    </modules>
+  </component>
+</project>

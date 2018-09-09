@@ -1,0 +1,119 @@
+microservice.contextPath: '/api/v1/pricing-graph'
+
+graphdb:
+  path: /Users/psingh15/DelphiCode/localgraphdump/graph.db
+
+
+graph:
+  rest:
+    totalconnections: 10
+    readtimeout: 3000
+    connectiontimeout: 1000
+
+neo4j:
+  logs:
+    custom-dir-enabled: false
+    custom-dir: /data/neo4j_logs
+  page-cache:
+    default: true
+    size: 4g
+  ha:
+    enabled: false
+    fetch-from-eureka: true
+    cluster-server-port: 5001
+    server-port: 6001
+    pull-interval: 10
+    push-factor: 1
+  cypher:
+    prohibited-operations: CREATE,REMOVE,DELETE,CREATE UNIQUE,MERGE,FOREACH,SET
+  cluster-status:
+    url: http://{graph-service-host}/api/v1/pricing-graph/config/clusterStatus
+    threshold: 100
+  backup:
+    enabled: false
+    port: 6362
+  bolt:
+    enabled: false
+    type: BOLT
+    port: 7787
+  metrics:
+    enabled: false
+    csv:
+      enabled: false
+      #path: /var/log/DP/${CONTAINER_HOST_NAME}
+      path: neo4j-metrics #un comment this for local
+      interval: 3m
+    neo4j:
+      enabled: false
+      tx:
+        enabled: false
+      pagecache:
+        enabled: false
+      counts:
+        enabled: false
+      network:
+        enabled: false
+      log-rotation:
+        enabled: true
+
+#container-name: ${CONTAINER_NAME}
+container-name: local_container #Un comment this for local
+eureka-service-url: http://localhost:1122/eureka/apps/{serviceName} #Un comment this for local
+#eureka-service-url:  https://${dp.username}:${dp.password}@${eureka.zone1
+#.host}:9001/eureka/apps/{serviceName}
+
+
+coupon:
+  initial:
+    couponId: 2500
+  couponId:
+    maxLimit: 9999
+  payment:
+      methods:
+        allowed: JCP,VISA,MASTER_CARD,DISCOVER,AMEX,BILL_ME_LATER,PAY_PAL,GIFTCARD,CASH
+  rewardPrice:
+          type: ORIGINAL,SALE,NOW,CLEARANCE
+
+
+promotion:
+  initial:
+    promotionId: 100000
+
+jwt:
+  header: Authorization
+  sample-token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJhcGkuamNwZW5uZXkuY29tIiwiaWF0IjoxNDc1ODc4Njc2MDE3LCJhdWQiOiJqY3Blbm5leS5jb20iLCJzdWIiOiJ0bVNNWENXZXlLWEhVVnk2ckRiZyIsImF1dGhvcml0aWVzIjpbImFjY291bnRfYWRtaW5fYWNjZXNzIl0sImV4cCI6MTUwNzQxNDY3Nn0.ZphMuPGUFq2bPw5EDUr2E9CLUj4hn5CqACCgSmhLTxLIflC3Z-gpAqGRKYZMtvfuJQXuUZwPA4SXI0ZOXD-FTPKoN65HLfpcUbq53Cu-SF7bo_f9P4vtKiG2lT7NnfrhO8f6kP3CHHUlMg6sh6i0vgzVvSF-RfPM1bW3MhyjQNzNEQqJ9js8XxSdSDymXXwWQUzEFqIPQoo4OnpYNeVOyMDWAYQG4-KMbrEaNBXEiyV7mrSTPhHhIuL7r5tvobhiZ2hgRJNVVQNdtF_WZZS_2OssZJ8wEJFD9_n9q0pT8F17jFWlw5j4_cIWYrkh0nxSylToPPA-NL2bKQI0BRLa3Q
+  key-value: |
+                             -----BEGIN PUBLIC KEY-----
+                             MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv7Df01JaewsuWvjql0W3
+                             uf23EDFexU815VL/MaEv7KBx5wARU4s6/I3wC5hZXoH3CXIHYFP/QzVnbDFFebUu
+                             6k/uYYQZYYizetdN9dW4lpciKIQLnTC0ILbL0/fMIj+PJov4G4E0acOKDtsQShgV
+                             yqI8nycLTxIC79XNPFdFPhRXMztmS/PmTOdbD42pRTXBF5dAfzpaFRVxl8uIpYrY
+                             2sAkwPskv2qdcqtaNzkWuebIm1Vm5btiL5WvJrdRl53EDE7dfa9Y5RDbtWB9OSkd
+                             276cWiIqmyLzSG/fQR5YcaFJrCrB5m8lAr4K8t9BRw5dce1ANwuCcguKhfuZSNHV
+                             FQIDAQAB
+                             -----END PUBLIC KEY-----
+
+  # Alternative public key to verify a JWT token signature. Used if not empty
+  key-value2: |
+                             -----BEGIN PUBLIC KEY-----
+                             MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAk1QrFpYNJw8kOQ9MUIux
+                             TrxnA2ZVKPT0Y+Pwtv9lfUvpH0efwiVBRk3gr3QPtyIjQTeAuDKblYPDVd69D36G
+                             nyGF8H+ZoiVnEGRBlTUKq9eOTF8w4PKswtoK2AZrGOHpRRn/8dkAg+TeJP9gdNrm
+                             68uWDyr1m8EGky8aQUtGiJr/NPJhvSXfF7N33HMPV1ZRGIRfbibccDRcRNgvX0VQ
+                             Kn6kEBY+aCOZnQOevt8dl3gChLNJ/XeOpd8ZryFyJzhXcnDJk4HGEEiJbup+1HHv
+                             X1TomHyEAGU6Q+S3WbgDmSeyLR339g6giPEL22payq/OW+d5HOuMx+oZKjFkzZ/m
+                             RQIDAQAB
+                             -----END PUBLIC KEY-----
+
+
+authorization_enabled: false
+time_zone_value: America/Chicago
+
+authorization:
+  roles:
+    pricing-store-user: ROLE_ACCOUNT_USER_READ
+    promo-user: PROMO_USER
+    coupon-user: COUPON_USER
+  users:
+    pricing-store-user: ROLE_ACCOUNT_USER_READ
+  excluded-urls: info,health,metrics,isReady,clusterStatus

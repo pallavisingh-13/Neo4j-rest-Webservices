@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.neo4j:neo4j-enterprise-kernel:tests:3.1.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-enterprise-kernel/3.1.2/3d1ee721d0e0ecf4dc933dad3c8916a1777ab561/neo4j-enterprise-kernel-3.1.2-tests.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.neo4j/neo4j-enterprise-kernel/3.1.2/4172b1542cb11f7df75e43191a4a9e1a577877ec/neo4j-enterprise-kernel-3.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
